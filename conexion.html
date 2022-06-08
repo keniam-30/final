@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>Conexion de base de datos</title>
+		<style type="text/css">
+			
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header{
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			
+		</style>
+	</head>
+	<body style= "background-color: #c8d1d1;">
+      
+
+        
+		<H1>Conexion de base de datos</H1><br>
+		<P>En informática, una conexión a base de datos es la forma que un servidor de base de datos y su software cliente se comunican entre sí. </p>
+            El cliente y el servidor pueden o no estar en una misma máquina.</p> <br>
+
+            <P> El cliente utiliza una conexión a base de datos para enviar comando y recibir respuestas del servidor. </p>
+                <P>Una base de datos es almacenada como un fichero o como un conjunto de ficheros en un disco magnético, </p>
+                    <P>una cinta, un disco óptico u otro dispositivo de almacenamiento secundario. </p>
+                        <P>La información en estos archivos puede estar dividida en registros y cada registro consistir de uno o más campos.</p><br>
+            
+            <P>Los campos son las unidades básicas de almacenamiento de datos en bases de datos, </p>
+                <P>cada campo usualmente contiene información perteneciente a un aspecto o atributo de la entidad descrita por la base de datos. </p>
+                    <P>Los registros también son organizados en tablas que incluyen información acerca de las relaciones entre varios campos.</p><br>
+            
+            <P> Si bien "base de datos" puede ser aplicado a cualquier colección de información en archivos de computadora, </p>
+                <P> en un sentido estricto una base de datos debería proveer características de referencias cruzadas.</p><br>
+            
+            <P> La conexiones son un concepto clave en la programación centrada en datos. </p>
+                <P>Como algunos gestores de base de datos requieren un tiempo considerable para conectar, </p>
+                    <P>una pooling de conexiones (agrupación de conexiones) es utilizado para mejorar el rendimiento. </p>
+                        <P>Ningún comando puede ser realizado en una base de datos sin una conexión "abierta y disponible" a esta.</p><br>
+            
+            <P>Las conexiones se construyen mediante el suministro de un controlador o proveedor subyacente con una cadena de conexión,</p> 
+                <P>que se utiliza para direccionar una base de datos o servidor específico y para proporcionar una instancia y </p>
+                    <P>credenciales de autenticación de usuario.</p><br>
+            
+            <P>Una vez que la conexión se constituyó, puede ser abierta o cerrada a voluntad, y las propiedades </p>
+                <P>(como el comando de longitud de tiempo de espera o transacciones, si existen) pueden ser configuradas.</p><br>
+            
+                    
+
+                   <h2> Conexión a MySQL usando PHP </h2><br>
+                   <P>Puedes acceder a las bases de datos MySQL directamente por medio de scripts PHP. Esto te permite leer y escribir datos a tu base de datos directamente desde tu sitio web.</p><br>
+
+                    <P>Conéctate a tu servidor MySQL utilizando la instrucción mysqli_connect. Por ejemplo:</p>
+                        <P>$con = mysqli_connect('HOSTNAME','USERNAME','PASSWORD');</p>
+                            <P>Para obtener ayuda con tu información de mysqli_connect, consulta Encuentra el nombre de host de tu base de datos.</p><br>
+
+                                <P>Selecciona la base de datos a la que quieras acceder utilizando mysqli_select_db. Por ejemplo:</p>
+                                    <P>mysqli_select_db('DATABASENAME', $con)</p>
+                                        <P>En donde 'DATABASENAME' es el nombre de tu base de datos, esto también aparece en la página de detalles de tu base de datos.</p><br>
+
+                                            <P>Después de establecer la conexión y seleccionar la base de datos, puedes consultarla usando PHP.</p><br>
+                                                <h2>Cadena de conexión de MySQL con PHP de ejemplo</h2> <br>
+                                               <p>Esta cadena de conexión buscará en una base de datos (your_dbusername), encontrará una tabla en particular (your_tablename) y, </p> 
+                                            <p>  luego, listará todos los valores en esa tabla para un campo (por ejemplo, columna) que le especifiques (your_field).</p> 
+                                            
+                                            <p> ?php</p>
+                                        <p> //Sintaxis de conexión de la base de datos de muestra para PHP y MySQL.</p>
+                                            
+                                    <p> //Conectar a la base de datos</p>
+                                            
+                                <p> $hostname="your_hostname";</p>
+                            <p> $username="your_dbusername";</p>
+                        <p>   $password="your_dbpassword";</p>
+                    <p>$dbname="your_dbusername";</p>
+                <p> $usertable="your_tablename";
+            <p>$yourfield = "your_field";</p>
+                                            
+        <p>mysqli_connect($hostname,$username, $password) o morir ("html>script language='JavaScript'>alert
+            ('¡No es posible conectarse a la base de datos! Vuelve a intentarlo más tarde.'),history.go(-1)/script>/html>");</p>
+        <p> mysqli_select_db($dbname);</p>
+                                            
+        <p> # Comprobar si existe registro</p>
+                                            
+        <p>$query = “SELECCIONAR * DESDE $usertable”;</p>
+                                            
+        <p> $result = mysqli_query($query);  </p>
+        <p>si($result){</p>
+            <p> while($row = mysqli_fetch_array($result)){</p>
+                <p>$name = $row["$yourfield"];</p>
+                <p> echo "Nombre: ".$name."br/>";</p>
+                    <p>   }</p>
+                        <p>  }</p>
+                            <p> ?>   </p>   
+                            <br>
+                            <a href="final_T.php"> Principal </a>                    
+	</body>	
+</html>

@@ -1,0 +1,48 @@
+<html>
+ <head>
+ <title> validación cedula identidad </title> 
+</head> 
+<body> 
+<img src="bandera.jpg" alt="RD" width="600" height="350">
+<h1> Validacion de cedula identidad Dominicana </h1>
+
+<form method="post"> 
+Cedula: 
+<input name="cedula" id="cedula" type="text"/> 
+<input name ="send" type="button" value="Validar" onClick="valida_cedula(this.form)"/> <br>
+
+<a href="final_T.php"> Principal </a>
+</form> 
+</body> 
+<script language="javascript"> 
+
+function valida_cedula(form) {  
+    var ced = document.getElementById('cedula').value; 
+    var c = ced.replace(/-/g,''); 
+    var cedula = c.substr(0, c.length - 1);  
+    var verificador = c.substr(c.length - 1, 1);  
+    var suma = 0;  
+    var cedulaValida = 0;
+    if(ced.length < 11) { return false; }  
+    for (i=0; i < cedula.length; i++) {  
+        mod = "";  
+            if((i % 2) == 0){mod = 1} else {mod = 2}  
+            res = cedula.substr(i,1) * mod;  
+            if (res > 9) {  
+                res = res.toString();  
+                uno = res.substr(0,1);  
+                dos = res.substr(1,1);  
+                res = eval(uno) + eval(dos);  
+            }  
+            suma += eval(res);  
+    }  
+    el_numero = (10 - (suma % 10)) % 10;  
+    if (el_numero == verificador && cedula.substr(0,3) != "000") { 
+        alert('La cedula ingresada es valida!');
+    }else{
+        alert('La cedula ingresada no es valida!');
+    }
+}
+
+</script> 
+</html>

@@ -1,0 +1,87 @@
+<html lang="es">
+<head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script sr="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="cargarTabla5.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body style= "background-color: rgb(152, 221, 204);">
+    <div class="col-sm-6">
+        <form id="nuevo-condicion">
+            <div class="form-group">
+                <h1> Condicion de los pasientes </h1>
+                <label for="enfermedad">Enfermedad</label>
+                <input type="text" class="form-control" id="enfermedad"/>
+            </div>
+            <div class="form-group">
+                <label for="tiempo">Tiempo con la enfermedad</label>
+                <input type="text" class="form-control" id="tiempo"/>
+            </div>
+            <div class="form-group">
+                <label for="detalle">Detalle</label>
+                <input type="text" class="form-control" id="detalle"/>
+            </div>
+          
+            <input type="submit" value="Añadir condicion"/>
+        </form>
+        <a href="final_T.php"> Principal </a>
+    </div>
+    <div class="col-sm-6">
+        <div id="tabla-clasificacion">
+            <table class="table">
+                <thaead>
+                    <tr>
+                        <th>Enfermedad</th>
+                        <th>Tiempo con la enfermedad</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thaead>
+                <tbody id="condicion-tabla">
+                    
+                </tbody>
+            </table>
+        </div>
+        <button id="mostrar-tabla">Mostrar Tabla</button>
+    </div>
+    <div class="col-sm-6">
+        <canvas id="myChart" width="500px" height="500px"></canvas> 
+    </div>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Hipertencion alta', 'Leucemia', 'Gripe', 'Covid 19'],
+            datasets: [{
+                label: '# Enfermedad',
+                data: [3, 4, 1, 2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                   
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                   
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script sr="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+
+    <script src="cargarTabla.js"></script>
+</head>
+<body style= "background-color: #b8caf0;">
+    <div class="container">
+    <div class="row">
+
+    <div class="col-sm-6">
+        <form id="nuevo-paciente">
+            <div class="form-group">
+                <label for="paciente">Paciente</label>
+                <input type="text" class="form-control" id="paciente"/>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <input type="text" class="form-control" id="sexo"/>
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="text" class="form-control" id="edad"/>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" class="form-control" id="direccion"/>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" class="form-control" id="telefono"/>
+            
+            <input type="submit" value="Añadir Paciente"/>
+            
+        </form>
+    </div>
+        <a href="Index.html"> Inicio </a>
+    </div>
+    <div class="col-sm-6">
+        <div id="tabla-clasificacion">
+            <table class="table">
+                <thaead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thaead>
+                <tbody id="paciente-tabla">
+                    
+                </tbody>
+            </table>
+        </div>
+  
+        <button id="mostrar-tabla">Mostrar Tabla</button>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
