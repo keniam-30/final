@@ -7,7 +7,7 @@ class Conexion
         $conexion = null;
         try {
             //direccion de la conexion con la base de datos
-            $conexion = new PDO("mysql:host=sql5.freemysqlhosting.net;dbname=formularios","sql5498382","z8GkPJI49i");
+            $conexion = new PDO("mysql:host=sql5.freemysqlhosting.net;dbname=sql5498382","sql5498382","z8GkPJI49i");
             // set the PDO error mode to exception
             $conexion->setAttribute(
                 PDO::ATTR_ERRMODE,
